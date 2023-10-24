@@ -1,0 +1,21 @@
+{
+  "name": "ecdh-example",
+  "version": "1.0.0",
+  "main": "./lib/index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@noble/curves": "^1.2.0",
+    "typescript": "^5.2.2"
+  },
+  "files": [
+    "./bin/*",
+    "./lib/*"
+  ],
+  "typings": "./lib/index.d.ts",
+  "scripts": {
+    "start": "bun run ./src/index.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.8"
+  }
+}
