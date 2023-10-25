@@ -30,10 +30,34 @@ bun run src/index.ts
 | n     | 115792089237316195423570985008687907852837564279074904382605163141518161494337 |
 | h     | 1                                                                              |
 
+## Normal Diffie Hellman
 
+- $p$ The order of the field
+- $G$ Generator number
+- $a$ Alice Private key
+- $A$ Alice Public key
+- $b$ Bob Private key
+- $B$ Bob Public key
+- $S$ Shared secret
 
 | Alice | Attacker sees | Bob |
 |---|---|---|
 | $a \in [1, p-1]$|$p,g$|$b \in [1,p-1]$|
 |$A=g^a\mod{p}$|$A,B$|$B=g^b\mod{p}$|
 |$S=B^a\mod{p}=(g^b)^a \mod{p}$||$S=A^b\mod{p}=(g^a)^b\mod{p}$|
+
+## Elliptic Curve Diffie Hellman
+
+- $n$ The key size
+- $G$ Generator (Point) of the curve
+- $a$ Alice Private key
+- $A$ Alice Public key (Point)
+- $b$ Bob Private key
+- $B$ Bob Public key (Point)
+- $(S_x,S_y)$ Shared secret point (usually only $S_x$ is used)
+
+| Alice | Attacker sees | Bob |
+|---|---|---|
+|$a \in [1,n-1]$|$n, G$ | $b \in [1, n - 1]$|
+|$A=a\cdot G$|$A, B$|$B = b \cdot G$|
+|$(S_x,S_y)=a \cdot B=a\cdot (b \cdot G)$| | $(S_x,S_y)=b \cdot A = b \cdot (a \cdot G)$|
